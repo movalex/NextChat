@@ -178,3 +178,100 @@ const useStore = createPersistStore(
 - Test files in `/test/`
 - Jest 29.7.0 with React Testing Library
 - Run: `yarn test` or `yarn test:ci`
+
+---
+
+## Code Style & Documentation
+
+### Text Formatting Preferences
+
+* **No emojis** in code, comments, commit messages, or documentation
+* **Objective language**: Avoid "you", "your", "we", "our" in comments
+  - Bad: "You should validate the input here"
+  - Good: "Input validation required before processing"
+* **Technical tone**: Clear, professional, descriptive
+
+### Comment Guidelines
+
+* **Explain WHY, not WHAT**: Code should be self-documenting for the "what"
+  - Bad: `// Loop through users` (obvious from code)
+  - Good: `// Process users in batches to avoid memory overflow`
+* **Document non-obvious decisions**: Why this approach over alternatives
+* **Note limitations**: What the code doesn't handle or edge cases
+* **TODO comments**: Use sparingly, include context
+  ```python
+  # TODO: Refactor to use connection pooling for better performance
+  # Current implementation sufficient for <1000 requests/day
+  ```
+
+### Documentation Standards
+
+**Class Documentation:**
+* Purpose and responsibility of the class
+* Key methods and their usage
+* Example usage for non-trivial classes
+
+**Module/Package Documentation:**
+* High-level purpose
+* Main exports and their roles
+* Usage examples for public APIs
+
+---
+
+## Version Control
+
+### Git Commit Standards
+
+**Format:**
+```
+<type>: <description>
+
+[optional body]
+
+[optional footer]
+```
+
+**Types:**
+* `feat`: New feature
+* `fix`: Bug fix
+* `refactor`: Code restructuring without behavior change
+* `docs`: Documentation only
+* `test`: Adding or updating tests
+* `chore`: Maintenance tasks (dependencies, build config)
+* `perf`: Performance improvements
+* `style`: Formatting, missing semicolons, etc.
+
+**Examples:**
+* `feat: add user authentication endpoint`
+* `fix: resolve null pointer exception in payment processor`
+* `refactor: extract validation logic into separate module`
+* `docs: update API documentation with new endpoints`
+
+**Commit Message Rules:**
+
+* Use imperative mood ("add" not "added" or "adding")
+* Keep first line under 72 characters
+* No period at the end of the subject line
+* Separate subject from body with blank line
+* Wrap body at 72 characters
+* Use body to explain what and why, not how
+
+**Atomic Commits:**
+* One logical change per commit
+* Each commit should leave the codebase in a working state
+* Related changes go together, unrelated changes separate
+
+### Prohibited Content
+
+**Never include in commits:**
+* AI tool mentions or attributions
+* Co-authored-by lines referencing AI
+* Any emojis
+* Marketing language or promotional content
+
+### Git Workflow
+
+* Commit early and often (but keep commits logical)
+* Write commit messages as if explaining to a teammate
+* Review changes before committing (`git diff`)
+* Keep commits focused on a single concern
